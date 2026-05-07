@@ -1,0 +1,70 @@
+# ============================================================
+# ClaudeMed Patient Configuration
+# Rename this file to patient.yml and fill in your details.
+# ============================================================
+
+patient:
+  # Used for context in consultations — not stored externally
+  age: 34
+  sex_assigned_at_birth: "Male"  # Male / Female / Intersex
+  gender_identity: "Male"        # Optional
+  height_cm: 175
+  weight_kg: 72
+  ethnicity: ""                  # Optional — relevant for genetic risk factors
+
+# ============================================================
+# MEDICAL HISTORY
+# ============================================================
+
+conditions:
+  - name: ""         # e.g., "Type 2 Diabetes"
+    since: ""        # e.g., "2019"
+    managed_by: ""   # e.g., "GP" or "Endocrinologist"
+
+# ============================================================
+# CURRENT MEDICATIONS
+# ============================================================
+
+medications:
+  - name: ""         # e.g., "Metformin"
+    dose: ""         # e.g., "500mg"
+    frequency: ""    # e.g., "Twice daily"
+    purpose: ""      # e.g., "Type 2 Diabetes"
+
+# ============================================================
+# ALLERGIES
+# ============================================================
+
+allergies:
+  - allergen: ""     # e.g., "Penicillin"
+    reaction: ""     # e.g., "Hives"
+    severity: ""     # Mild / Moderate / Severe / Anaphylaxis
+
+# ============================================================
+# FAMILY HISTORY
+# ============================================================
+
+family_history:
+  - condition: ""    # e.g., "Coronary artery disease"
+    relation: ""     # e.g., "Father, age 58"
+
+# ============================================================
+# LIFESTYLE
+# ============================================================
+
+lifestyle:
+  smoking: "Never"                  # Never / Former (quit YYYY) / Current (X packs/day)
+  alcohol: "Occasional"             # None / Occasional / X drinks/week
+  exercise: "Moderate"              # Sedentary / Light / Moderate / Vigorous
+  occupation: ""                    # e.g., "Office worker"
+
+# ============================================================
+# CONSULTATION PREFERENCES
+# ============================================================
+
+preferences:
+  language: "English"
+  detail_level: "Full"              # Full / Summary
+  plain_language_explanations: true # Explain medical terms after using them
+  include_questions_for_doctor: true
+  include_red_flags: true

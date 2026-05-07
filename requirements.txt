@@ -1,0 +1,15 @@
+streamlit>=1.32
+pydantic>=2.6
+python-dotenv>=1.0
+plotly>=5.20
+pandas>=2.2
+networkx>=3.2
+pypdf>=4.0
+pillow>=10.2
+
+# Cloud backends (install at least one)
+anthropic>=0.40.0
+openai>=1.40.0
+google-genai>=0.3.0
+
+# Local backend (Ollama uses OpenAI SDK over http://localhost:11434/v1)

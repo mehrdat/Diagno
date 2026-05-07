@@ -1,0 +1,128 @@
+# ============================================================
+# ClaudeMed — Medical Knowledge Sources
+# Configure which sources to use for literature searches.
+# ============================================================
+
+primary_sources:
+  # Highest authority — search these first
+  - name: PubMed / MEDLINE
+    url: https://pubmed.ncbi.nlm.nih.gov
+    search_pattern: "site:pubmed.ncbi.nlm.nih.gov {query}"
+    priority: 1
+    type: database
+
+  - name: Cochrane Library
+    url: https://www.cochranelibrary.com
+    search_pattern: "site:cochranelibrary.com {query} systematic review"
+    priority: 1
+    type: systematic_reviews
+
+  - name: NEJM (New England Journal of Medicine)
+    url: https://www.nejm.org
+    search_pattern: "site:nejm.org {query}"
+    priority: 2
+    type: journal
+
+  - name: The Lancet
+    url: https://www.thelancet.com
+    search_pattern: "site:thelancet.com {query}"
+    priority: 2
+    type: journal
+
+  - name: BMJ (British Medical Journal)
+    url: https://www.bmj.com
+    search_pattern: "site:bmj.com {query}"
+    priority: 2
+    type: journal
+
+  - name: JAMA Network
+    url: https://jamanetwork.com
+    search_pattern: "site:jamanetwork.com {query}"
+    priority: 2
+    type: journal
+
+clinical_guidelines:
+  # Specialty society guidelines — authoritative for practice standards
+  - name: AHA / ACC (Cardiology)
+    url: https://www.heart.org
+    domains: [cardiology, cardiovascular]
+
+  - name: AAN (Neurology)
+    url: https://www.aan.com
+    domains: [neurology]
+
+  - name: ACR (Rheumatology)
+    url: https://www.rheumatology.org
+    domains: [rheumatology, autoimmune]
+
+  - name: ADA (Diabetes / Endocrinology)
+    url: https://www.diabetes.org
+    domains: [endocrinology, diabetes]
+
+  - name: Endocrine Society
+    url: https://www.endocrine.org
+    domains: [endocrinology, hormones]
+
+  - name: IDSA (Infectious Disease)
+    url: https://www.idsociety.org
+    domains: [infectious_disease]
+
+  - name: WHO Guidelines
+    url: https://www.who.int/publications/guidelines
+    domains: [all]
+
+  - name: ATS (Pulmonology)
+    url: https://www.thoracic.org
+    domains: [pulmonology, respiratory]
+
+  - name: ACG (Gastroenterology)
+    url: https://gi.org
+    domains: [gastroenterology]
+
+  - name: NCCN (Oncology)
+    url: https://www.nccn.org
+    domains: [oncology]
+
+  - name: USPSTF (Preventive Care / Screening)
+    url: https://www.uspreventiveservicestaskforce.org
+    domains: [screening, preventive]
+
+quick_references:
+  # Clinical decision support — fast lookups
+  - name: UpToDate
+    search_pattern: "site:uptodate.com {query}"
+    type: clinical_decision_support
+
+  - name: BMJ Best Practice
+    search_pattern: "site:bestpractice.bmj.com {query}"
+    type: clinical_decision_support
+
+  - name: Medscape
+    search_pattern: "site:emedicine.medscape.com {query}"
+    type: reference
+
+  - name: StatPearls (NCBI Bookshelf)
+    search_pattern: "site:ncbi.nlm.nih.gov/books {query} StatPearls"
+    type: textbook
+
+drug_references:
+  - name: FDA Drug Database
+    url: https://www.accessdata.fda.gov/scripts/cder/daf/
+    purpose: drug approvals, interactions, black box warnings
+
+  - name: Drugs.com Interactions
+    search_pattern: "site:drugs.com {drug1} {drug2} interaction"
+    purpose: drug-drug interactions
+
+search_settings:
+  prefer_recent_years: [2022, 2023, 2024, 2025]
+  evidence_hierarchy:
+    - "systematic review"
+    - "meta-analysis"
+    - "randomized controlled trial"
+    - "cohort study"
+    - "case-control"
+    - "case series"
+    - "expert opinion"
+  always_note_publication_year: true
+  flag_controversial_topics: true

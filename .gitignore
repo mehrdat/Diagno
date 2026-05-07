@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+
+# --- Personal / patient data (NEVER commit) ---
+# Patient profile and config
+config/patient.yml
+
+# Personal medical profile
+modes/_profile.md
+
+# Case history and pipeline (personal medical records)
+data/cases.md
+data/pipeline.md
+
+# Intake documents (lab results, imaging, questionnaires)
+data/intake/*
+!data/intake/.gitkeep
+
+# Generated diagnosis reports
+reports/*
+!reports/.gitkeep
+
+# Batch runtime state
+batch/logs/
+batch/tracker-additions/
+batch/batch-state.tsv
+batch/batch-runner.pid
+
+# Claude Code internal settings and memory
+.claude/
+
+# Reference/inspiration project (not part of the app)
+new_example/

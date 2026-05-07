@@ -1,0 +1,11 @@
+# Canonical states for data/cases.md
+
+states:
+  - Open           # Case created or in progress, analysis not yet complete
+  - Consulted      # Full specialist debate and report generated
+  - Awaiting Tests # Recommended tests ordered but results not yet available
+  - Updated        # New data received (labs, imaging), differential re-evaluated
+  - Resolved       # Diagnosis confirmed by a physician, treatment in progress
+  - Referred       # Patient referred to specialist, case transferred
+  - Closed         # No further follow-up needed (benign/self-limiting resolved)
+  - URGENT         # Red-flag symptoms flagged — immediate emergency care needed
